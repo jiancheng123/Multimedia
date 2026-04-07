@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Think Before You Click! — Scammer Awareness</title>
+  <meta name="description" content="Scammer Attack Awareness — Learn to recognise, avoid and report online scams." />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap');
+    
+    * {box-sizing: border-box; margin: 0; padding: 0}
+    html,body {height:100%}
+    
+    :root {
+      --cyber-primary: #00ff9f;
+      --cyber-secondary: #0080ff;
+      --cyber-accent: #ff0080;
+      --cyber-bg-dark: #0a0a0f;
+      --cyber-bg-card: #151520;
+      --cyber-text: #e0e0ff;
+      --cyber-text-dim: #9090b0;
+      --cyber-border: #2a2a40;
+      --cyber-glow: rgba(0, 255, 159, 0.3);
+    }
+    
+    body {
+      font-family: "Rajdhani", "Arial", sans-serif;
+      line-height: 1.6;
+      background: var(--cyber-bg-dark);
+      background-image: 
+        radial-gradient(circle at 25% 25%, rgba(0, 255, 159, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(0, 128, 255, 0.1) 0%, transparent 50%),
+        linear-gradient(45deg, transparent 48%, rgba(255, 0, 128, 0.03) 49%, rgba(255, 0, 128, 0.03) 51%, transparent 52%);
+      color: var(--cyber-text);
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+    
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 2px,
+          rgba(0, 255, 159, 0.03) 2px,
+          rgba(0, 255, 159, 0.03) 4px
+        );
+      pointer-events: none;
+      z-index: -1;
+    }
+    
+    .container {max-width: 1200px; margin: 0 auto; position: relative;}
+    
+    header {
+      background: linear-gradient(135deg, var(--cyber-bg-card), rgba(0, 255, 159, 0.1));
+      border: 2px solid var(--cyber-primary);
+      color: var(--cyber-text);
+      padding: 40px;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      box-shadow: 
+        0 0 30px var(--cyber-glow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, var(--cyber-primary), var(--cyber-secondary), var(--cyber-accent), var(--cyber-primary));
+      border-radius: 20px;
+      z-index: -1;
+      animation: borderFlow 4s linear infinite;
+    }
+    
+    @keyframes borderFlow {
+      0%, 100% { background-position: 0% 0%; }
+      25% { background-position: 100% 0%; }
+      50% { background-position: 100% 100%; }
+      75% { background-position: 0% 100%; }
+    }
+    
+    header h1 {
+      font-family: "Orbitron", monospace;
+      font-size: 36px; 
+      font-weight: 900;
+      margin-bottom: 10px;
+      text-shadow: 0 0 20px var(--cyber-primary);
+      background: linear-gradient(45deg, var(--cyber-primary), var(--cyber-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    header p {
+      opacity: 0.9;
+      font-weight: 300;
+      font-size: 18px;
+    }
+
+    nav {
+      margin: 30px 0;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    nav a {
+      text-decoration: none;
+      background: var(--cyber-bg-card);
+      color: var(--cyber-primary);
+      border-radius: 12px;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      border: 2px solid var(--cyber-border);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    nav a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, var(--cyber-glow), transparent);
+      transition: left 0.5s;
+    }
+    
+    nav a:hover::before {
+      left: 100%;
+    }
+    
+    nav a:hover,
+    nav a:focus {
+      background: var(--cyber-primary);
+      color: var(--cyber-bg-dark);
+      border-color: var(--cyber-primary);
+      box-shadow: 
+        0 0 20px var(--cyber-glow),
+        0 4px 20px rgba(0, 0, 0, 0.5);
+      transform: translateY(-3px);
+    }
+    
+    nav a:active {transform: translateY(-1px) scale(0.98);}
+    
+    main {
+      background: var(--cyber-bg-card);
+      border: 1px solid var(--cyber-border);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      position: relative;
+    }
+    
+    main::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 15px;
+      padding: 1px;
+      background: linear-gradient(45deg, var(--cyber-primary), transparent, var(--cyber-secondary), transparent, var(--cyber-accent));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: subtract;
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: subtract;
+      z-index: -1;
+    }
+    
+    section {margin-bottom: 35px}
+    
+    h2 {
+      font-family: "Orbitron", monospace;
+      color: var(--cyber-primary);
+      margin-bottom: 15px;
+      font-size: 24px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--cyber-primary), var(--cyber-secondary));
+      border-radius: 2px;
+      box-shadow: 0 0 10px var(--cyber-glow);
+    }
+    
+    .muted {color: var(--cyber-text-dim); font-size: 16px; font-weight: 300;}
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    
+    .card {
+      border: 1px solid var(--cyber-border);
+      background: linear-gradient(135deg, var(--cyber-bg-dark), rgba(0, 255, 159, 0.05));
+      padding: 25px;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyber-primary), var(--cyber-secondary), var(--cyber-accent));
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--cyber-primary);
+      box-shadow: 0 10px 25px rgba(0, 255, 159, 0.2);
+    }
+    
+    .card h3 {
+      font-family: "Orbitron", monospace;
+      font-size: 18px;
+      color: var(--cyber-primary);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    
+    .tip {
+      margin-top: 15px;
+      font-weight: 600;
+      color: var(--cyber-accent);
+      padding: 10px;
+      background: rgba(255, 0, 128, 0.1);
+      border-left: 3px solid var(--cyber-accent);
+      border-radius: 0 8px 8px 0;
+    }
+
+    .poster-wrap {
+      display: flex;
+      gap: 25px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    
+    .poster-thumb {
+      width: 350px;
+      max-width: 100%;
+      border-radius: 12px;
+      border: 2px solid var(--cyber-border);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    .poster-thumb:hover {
+      border-color: var(--cyber-primary);
+      box-shadow: 0 0 25px var(--cyber-glow);
+      transform: scale(1.02);
+    }
+    
+    .poster-caption {
+      max-width: 600px;
+      background: rgba(0, 255, 159, 0.05);
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid var(--cyber-border);
+    }
+    
+    .poster-caption ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .poster-caption li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+    
+    .poster-caption li::before {
+      content: '▶';
+      position: absolute;
+      left: 0;
+      color: var(--cyber-primary);
+      font-size: 12px;
+    }
+    
+    .poster-caption a {
+      color: var(--cyber-primary);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      background: rgba(0, 255, 159, 0.1);
+      border: 1px solid var(--cyber-primary);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .poster-caption a:hover {
+      background: var(--cyber-primary);
+      color: var(--cyber-bg-dark);
+      box-shadow: 0 0 15px var(--cyber-glow);
+    }
+
+    .video-container {
+      position: relative;
+      padding-top: 56.25%;
+      border-radius: 15px;
+      overflow: hidden;
+      border: 2px solid var(--cyber-border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      background: var(--cyber-bg-dark);
+    }
+    
+    .video-container::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, var(--cyber-primary), var(--cyber-secondary), var(--cyber-accent));
+      border-radius: 15px;
+      z-index: -1;
+      opacity: 0.7;
+    }
+    
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 13px;
+    }
+    
+    #resources ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    #resources li {
+      margin-bottom: 15px;
+      padding: 15px 20px;
+      background: linear-gradient(135deg, rgba(0, 255, 159, 0.05), rgba(0, 128, 255, 0.05));
+      border-left: 4px solid var(--cyber-primary);
+      border-radius: 0 12px 12px 0;
+      position: relative;
+    }
+    
+    #resources li::before {
+      content: '⚡';
+      position: absolute;
+      left: -2px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--cyber-primary);
+      color: var(--cyber-bg-dark);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      text-align: center;
+      color: var(--cyber-text-dim);
+      font-size: 14px;
+      border-top: 1px solid var(--cyber-border);
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+    }
+
+    @media (max-width:560px){
+      header h1 {font-size: 28px;}
+      nav {justify-content: center;}
+      nav a {padding: 10px 15px; font-size: 14px;}
+      .poster-wrap {flex-direction: column;}
+      .card {margin-bottom: 15px;}
+    }
+
+    a:focus, button:focus {
+      outline: 3px solid var(--cyber-primary);
+      outline-offset: 2px;
+    }
+    
+    /* Animated background particles */
+    .cyber-particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: var(--cyber-primary);
+      border-radius: 50%;
+      animation: float 6s infinite linear;
+      opacity: 0.6;
+    }
+    
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.6;
+      }
+      90% {
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Animated particles -->
+    <div class="cyber-particles"></div>
+    
+    <header>
+      <h1>Think Before You Click!</h1>
+      <p>Scammer Attack Awareness — learn how to recognise, avoid and report online scams.</p>
+    </header>
+
+    <nav aria-label="Main navigation">
+      <a href="#intro">Introduction</a>
+      <a href="#types">Common Scams</a>
+      <a href="#poster">Poster</a>
+      <a href="#video">Awareness Video</a>
+      <a href="#resources">Resources & Report A Scam</a>
+    </nav>
+
+    <main>
+      <section id="intro" aria-labelledby="intro-heading">
+        <h2 id="intro-heading">Introduction</h2>
+        <p class="muted">
+          This project was created for IT Cybersecurity Awareness Week to help college students and staff recognise
+          common online scams and learn practical prevention and reporting steps. Here we also provide multimedia content:
+          text, graphics, audio and video — to deliver this key message: <br><em>Think Before You Click!</em>
+        </p>
+      </section>
+
+      <section id="types" aria-labelledby="types-heading">
+        <h2 id="types-heading">Common Types of Online Scams</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Email Scams / Phishing</h3>
+            <p>Fraudulent emails pretending to be from banks or services aiming to steal credentials.</p>
+            <p class="tip">Tip: Always check the sender's address and avoid clicking unknown links.</p>
+          </article>
+
+          <article class="card">
+            <h3>Fake Websites</h3>
+            <p>Replica sites used to capture login or payment details.</p>
+            <p class="tip">Tip: Check URL spelling and HTTPS certificates.</p>
+          </article>
+
+          <article class="card">
+            <h3>Social Media Scams</h3>
+            <p>Fake giveaways, impersonation or DMs asking for OTPs or money.</p>
+            <p class="tip">Tip: Never share your OTP with anyone.</p>
+          </article>
+
+          <article class="card">
+            <h3>Vishing & SMS Scams</h3>
+            <p>Calls or SMS claiming to be banks or authorities requesting personal info.</p>
+            <p class="tip">Tip: Banks will never ask for OTP by phone or SMS.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="poster" aria-labelledby="poster-heading">
+        <h2 id="poster-heading">Poster</h2>
+        <div class="poster-wrap">
+          <img id="posterThumb" class="poster-thumb" src="Poster.png" alt="Think Before You Click! - SEGi Cybersecurity Awareness Poster" />
+          <div class="poster-caption">
+            <ul>
+              <li><strong>Institution:</strong> SEGi University & Colleges</li>
+              <li><strong>Campaign:</strong> Think Before You Click!</li>
+              <li><strong>Message:</strong> Protect your personal data from online scams. Stay alert, stay safe.</li>
+              <li><strong>Contact:</strong> Adam & JC: 012-927392</li>
+              <li><strong>Website:</strong> www.segiitclub.com</li>
+            </ul>
+            <p style="margin-top:10px">
+              <a href="Poster.png" download>Download SEGi Poster</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+		<section id="video" aria-labelledby="video-heading">
+		  <h2 id="video-heading">Awareness Video (1–3 minutes)</h2>
+
+		  <div class="video-container" style="
+			  position: relative;
+			  width: 100%;
+			  height: 50vh; /* container height = 50% of the viewport */
+			  margin-top: 12px;
+			  border: 1px solid #333;
+			  border-radius: 10px;
+			  overflow: hidden;
+		  ">
+			<iframe
+			  src="https://www.youtube.com/embed/pOL5EOdCSkA"
+			  style="
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;  /* iframe fills the container */
+				border: 0;
+			  "
+			  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+			  allowfullscreen>
+			</iframe>
+		  </div>
+		</section>
+
+      <section id="resources" aria-labelledby="resources-heading">
+        <h2 id="resources-heading">Resources & How to Report</h2>
+        <ul>
+          <li>Contact your bank immediately if you suspect financial fraud.</li>
+          <li>Report phishing emails to your institution and relevant authorities.</li>
+          <li>Keep evidence such as screenshots, URLs and sender details.</li>
+        </ul>
+      </section>
+
+      <footer>
+        <p>© 2025 Scammer Attack Awareness Project. Designed by Jc and Adam.</p>
+      </footer>
+    </main>
+  </div>
+  
+  <script>
+    // Create floating cyber particles
+    function createParticles() {
+      const container = document.querySelector('.cyber-particles');
+      const particleCount = 15;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'cyber-particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+        container.appendChild(particle);
+        
+        // Remove and recreate particle after animation
+        setTimeout(() => {
+          if (container.contains(particle)) {
+            container.removeChild(particle);
+            createSingleParticle();
+          }
+        }, (Math.random() * 3 + 4) * 1000);
+      }
+    }
+    
+    function createSingleParticle() {
+      const container = document.querySelector('.cyber-particles');
+      const particle = document.createElement('div');
+      particle.className = 'cyber-particle';
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+      container.appendChild(particle);
+      
+      setTimeout(() => {
+        if (container.contains(particle)) {
+          container.removeChild(particle);
+          createSingleParticle();
+        }
+      }, (Math.random() * 3 + 4) * 1000);
+    }
+    
+    // Initialize particles when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      createParticles();
+      
+      // Add glow effect to cards on scroll
+      const cards = document.querySelectorAll('.card');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = 'pulse 2s ease-in-out';
+          }
+        });
+      });
+      
+      cards.forEach(card => observer.observe(card));
+    });
+    
+    // Add pulse animation for cards
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes pulse {
+        0%, 100% { box-shadow: 0 0 5px rgba(0, 255, 159, 0.3); }
+        50% { box-shadow: 0 0 20px rgba(0, 255, 159, 0.6), 0 0 30px rgba(0, 255, 159, 0.4); }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
